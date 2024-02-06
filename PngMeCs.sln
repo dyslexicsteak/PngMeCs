@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PngMeCs", "PngMeCs\PngMeCs.csproj", "{AFE3B7EF-CB7A-4C07-8DF7-13339199DCFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{A6369F31-E72C-4463-BBE5-2731B4668D11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cli", "Cli\Cli.csproj", "{7A8E1C32-B774-4FC1-A37D-E15EAB7475D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFE3B7EF-CB7A-4C07-8DF7-13339199DCFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFE3B7EF-CB7A-4C07-8DF7-13339199DCFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFE3B7EF-CB7A-4C07-8DF7-13339199DCFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFE3B7EF-CB7A-4C07-8DF7-13339199DCFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6369F31-E72C-4463-BBE5-2731B4668D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6369F31-E72C-4463-BBE5-2731B4668D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6369F31-E72C-4463-BBE5-2731B4668D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6369F31-E72C-4463-BBE5-2731B4668D11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A8E1C32-B774-4FC1-A37D-E15EAB7475D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A8E1C32-B774-4FC1-A37D-E15EAB7475D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A8E1C32-B774-4FC1-A37D-E15EAB7475D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A8E1C32-B774-4FC1-A37D-E15EAB7475D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

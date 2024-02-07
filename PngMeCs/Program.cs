@@ -3,10 +3,11 @@ using CommandLine;
 using PngMeCs.Format;
 using System.Text;
 
-_ = Parser.Default.ParseArguments<EncodeSubOptions, PrintSubOptions, DecodeSubOptions>(args)
+_ = Parser.Default.ParseArguments<EncodeSubOptions, PrintSubOptions, DecodeSubOptions, RemoveSubOptions>(args)
 .WithParsed<EncodeSubOptions>(Encode)
 .WithParsed<PrintSubOptions>(Print)
 .WithParsed<DecodeSubOptions>(Decode)
+.WithParsed<RemoveSubOptions>(Remove)
 .WithNotParsed(_options => Console.WriteLine("Could not parse arguments."));
 
 void Encode(EncodeSubOptions options)
@@ -61,4 +62,33 @@ void Decode(DecodeSubOptions options)
     {
         Console.WriteLine(chunk);
     }
+}
+
+void Remove(RemoveSubOptions options)
+{
+    Console.WriteLine($"Removing {options.ChunkType} from {options.Path}");
+    using var fileStream = File.OpenRead(options.Path!);
+    byte[] buf = new byte[fileStream.Length];
+    _ = fileStream.Read(buf);
+
+    Png png = new(buf);
+
+    ChunkType chunkType = new(Encoding.ASCII.GetBytes(options.ChunkType!));
+    Chunk? chunk = png.RemoveChunk(chunkType);
+
+    if (chunk is not null)
+    {
+        Console.WriteLine($"Removed chunk: {chunk.Type} - {chunk.DataAsString()}");
+    }
+    else
+    {
+        Console.WriteLine("Chunk not found.");
+    }
+
+    foreach (Chunk c in png.Chunks)
+    {
+        File.WriteAllBytes(options.Path!, (byte[])png);
+    }
+
+    Console.WriteLine("Done.");
 }
